@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Login - HSM
+        {% endblock title %}
+    </title>
+    <meta name="author" content="Home Services Marketplace">
+    <meta name="author" content="Omobolaji Durojaiye">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/animate.min.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static', filename='apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static', filename='apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static', filename='apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static', filename='android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    
+    <div class="head">
+        <button id="serviceprovider">
+            Login as a service provider
+        </button>
+        <button id="customer">
+            Login as a customer
+        </button>
+    </div>
+
+    <main>
+        <div class="form">
+            <form id="serviceprovider_loginForm" action="" method="post">
+                <h4>
+                    LOG IN - SERVICE PROVIDER
+                </h4>
+
+                <p id="serviceprovidererror" style="color: red; font-size: 0.7em;"></p>
+
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        
+                <div class="form-v mb-3">
+                    <label for="serviceprovideremail">Email</label>
+                    <input type="email" class="form-control" id="serviceprovideremail" name="serviceprovideremail" placeholder="name@email.com">
+                </div>
+
+                <div class="form-v mb-3">
+                    <label for="serviceproviderpwd">Password</label>
+                    <input type="password" class="form-control" id="serviceproviderpwd" name="serviceproviderpwd" placeholder="*******">
+                </div>
+        
+                <div class="submit">
+                    <button type="submit" id="serviceprovidersubmit">Submit</button>
+                </div>
+            </form>
+
+            <form id="customer_loginForm" action="" method="post">
+                <h4>
+                    LOG IN - CUSTOMER
+                </h4>
+
+                <p style="color: red; font-size: 0.7em;" id="customererror"></p>
+
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        
+                <div class="form-v mb-3">
+                    <label for="customeremail">Email</label>
+                    <input type="email" class="form-control" id="customeremail" name="customeremail" placeholder="name@email.com">
+                </div>
+
+                <div class="form-v mb-3">
+                    <label for="customerpwd">Password</label>
+                    <input type="password" class="form-control" id="customerpwd" name="customerpwd" placeholder="*******">
+                </div>
+        
+                <div class="submit">
+                    <button type="submit" id="customersubmit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-image">
+
+            <img src="{{url_for('static', filename='images/welcome-image (3).png')}}" alt="">
+
+        </div>
+    </main>
+
+
+    <script src="{{url_for('static', filename='vendor/script/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{url_for('static', filename='javascript/login.js')}}"></script>
+</body>
+</html>
