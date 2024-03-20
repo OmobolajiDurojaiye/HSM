@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    height: 100vh;
+    /* background: #141414 !important; */
+    background: linear-gradient(to right, #EED2BA, rgb(73, 73, 73));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 95%;
+    height: 95vh;
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    background-color:#222;
+    border-radius: 20px;
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrollbar */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #EED2BA transparent; /* Firefox */
+    padding: 2%;
+}
+
+/* WebKit (Chrome, Safari, etc.) */
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #EED2BA;
+    border-radius: 10px;
+}
+
+main::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.head {
+    height: max-content;
+    padding: 1% 5%;
+    width: 100%;
+    border: 2px solid #EED2BA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.head .welcome-text {
+    height: max-content;
+    /* padding: 2%; */
+    width: max-content;
+    /* border: 1px solid white; */
+}
+
+.head .welcome-text span {
+    font-size: .3em;
+    background-color: rebeccapurple;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.head .welcome-text a {
+    /* width: 100%; */
+    background-color: #EED2BA;
+    color: rebeccapurple;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.head .profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid rebeccapurple;
+}
+
+.head .profile-pic img {
+    height: inherit;
+    width: 100%;
+    border-radius: 50%;
+}
+
+nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 1%;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+nav button, a {
+    background: none;
+    border: none;
+    margin: 0 20px;
+}
+
+/*
+    landing_home style
+*/
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#location {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #EED2BA;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: rebeccapurple;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    background-color: #EED2BA;
+    color: rebeccapurple;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.filter-options {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: rebeccapurple;
+}
+
+option {
+    color: rebeccapurple;
+}
+
+.services {
+    height: max-content;
+    padding: 2%;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 2vh;
+}
+
+.service-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-head {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.service-head .box {
+    width: 23%;
+    height: 20vh;
+    background: linear-gradient(to right, #EED2BA, rgb(73, 73, 73));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+    border-radius: 20px;
+}
+
+.service-head .box h1 {
+    font-size: 1.2em;
+}

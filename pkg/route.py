@@ -36,8 +36,13 @@ def index():
             db.session.rollback()
             return jsonify({'success': False, 'message': 'Error occurred while sending the message. Please try again later.'})
     else:
-        return render_template('index.html')   
+        return render_template('index.html')
     
 @app.route('/login/', methods=['POST', 'GET'])
 def login():
     return render_template('user/login.html')
+
+
+@app.route('/dashboard/')
+def landing_page():
+    return render_template('customer/landing_page.html')

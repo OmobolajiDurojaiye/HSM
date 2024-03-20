@@ -32,7 +32,7 @@ body {
   width: 8px;
 }
 
-.main::-webkit-scrollbar-thumb {
+.main::-webkit-scrollbar-thumb { 
   background-color: #EED2BA;
   border-radius: 10px;
 }

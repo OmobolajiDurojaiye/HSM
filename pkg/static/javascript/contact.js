@@ -54,11 +54,9 @@ $(document).ready(function() {
         $.ajax({
             url: '/index',
             type: 'POST',
-            // Include CSRF token in the headers
             headers: {
                 'X-CSRFToken': csrfToken
             },
-            // Include form data in the data being sent
             data: $('#contact-form').serialize(),
             success: function(response) {
                 if (response.success) {
@@ -68,7 +66,7 @@ $(document).ready(function() {
                 }
             },
             error: function(error) {
-                alert('An error occurred while sending the message.');
+                alert('Error: ' + error);
             }
         });        
     });    
