@@ -38,18 +38,29 @@
 </head>
 <body>
     
-    <div class="head">
+    {#<div class="head">
         <button id="serviceprovider">
             Login as a service provider
         </button>
         <button id="customer">
             Login as a customer
         </button>
+    </div>#}
+
+    <div class="flash" style="width: max-content !important;">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="background-color: #141414; border-radius: 10px; padding: 10px; margin: 10px; text-align: center;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
 
     <main>
+
         <div class="form">
-            <form id="serviceprovider_loginForm" action="" method="post">
+            {#<form id="serviceprovider_loginForm" action="" method="post">
                 <h4>
                     LOG IN - SERVICE PROVIDER
                 </h4>
@@ -71,11 +82,11 @@
                 <div class="submit">
                     <button type="submit" id="serviceprovidersubmit">Submit</button>
                 </div>
-            </form>
+            </form>#}
 
-            <form id="customer_loginForm" action="" method="post">
+            <form id="customer_loginForm" action="/service_provider/login/" method="post">
                 <h4>
-                    LOG IN - CUSTOMER
+                    LOG IN SERVICE PROVIDER
                 </h4>
 
                 <p style="color: red; font-size: 0.7em;" id="customererror"></p>
@@ -83,17 +94,32 @@
                 <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
         
                 <div class="form-v mb-3">
-                    <label for="customeremail">Email</label>
-                    <input type="email" class="form-control" id="customeremail" name="customeremail" placeholder="name@email.com">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@email.com">
                 </div>
 
                 <div class="form-v mb-3">
-                    <label for="customerpwd">Password</label>
-                    <input type="password" class="form-control" id="customerpwd" name="customerpwd" placeholder="*******">
+                    <label for="password">
+                        Password 
+                    </label> &nbsp;
+                    <span id="show">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16" data-bs-toggle="tooltip" data-bs-placement="top" title="Show">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                        </svg>
+                    </span>
+                    <div class="password-container">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="*******">
+                    </div>
                 </div>
+
+                {#<div class="signup">
+                    Don't have an account yet? <a href="">signup</a> as a service provider or as
+                    a <a href="">customer</a>
+                </div>#}
         
                 <div class="submit">
-                    <button type="submit" id="customersubmit">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -108,6 +134,7 @@
 
     <script src="{{url_for('static', filename='vendor/script/jquery.js')}}"></script>
     <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
-    <script src="{{url_for('static', filename='javascript/login.js')}}"></script>
+    {#<script src="{{url_for('static', filename='javascript/login.js')}}"></script>#}
+    <script src="{{url_for('static', filename='javascript/commonfuncs.js')}}"></script>
 </body>
 </html>

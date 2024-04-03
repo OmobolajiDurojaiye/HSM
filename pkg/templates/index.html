@@ -40,16 +40,6 @@
 <body>
     
     <div class="main">
-        {% set m = get_flashed_messages(with_categories=True) %}
-        {%if m%}
-        {% for cat,msg in m %}
-            {%if cat == "error"%}
-            <div class="alert alert-danger noround">{{msg}}</div>
-            {% else %}
-            <div class="alert alert-info noround">{{msg}}</div>
-            {% endif %}
-        {% endfor %}
-        {% endif %}
         <div class="sidebar">
             <div class="logo">
                 <h1 style="color: #EED2BA !important;">
@@ -59,8 +49,8 @@
 
             <nav>
                 {#<a href="" id="team-link">Team</a>#}
-                <a href="" id="contact-link">Contact</a>
-                <a href="" id="about-link">About</a>
+                <a href="/contact" id="contact-link">Contact</a>
+                <a href="/about" id="about-link">About</a>
                 <a href="/">Home</a>
             </nav>
         </div>
@@ -81,13 +71,13 @@
                         Get started now and enjoy the convenience!
                     </p>
                     <div class="welcome-buttons">
-                        <button class="rebeccapurple" id="signup-service-provider">
+                        <a href="/service_provider/signup/" class="rebeccapurple" id="signup-service-provider">
                             Be a service provider
-                        </button>
+                        </a>
 
-                        <button class="gold" id="signup-customer">
+                        <a href="/customer/signup/" class="gold" id="signup-customer">
                             Look for home service
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -150,9 +140,10 @@
 
     <script src="{{url_for('static', filename='vendor/script/jquery.js')}}"></script>
     <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
-    <script src="{{url_for('static', filename='javascript/contact.js')}}"></script>
+    {#<script src="{{url_for('static', filename='javascript/contact.js')}}"></script>
     <script src="{{url_for('static', filename='javascript/about.js')}}"></script>
     <script src="{{url_for('static', filename='javascript/service_provider_signup.js')}}"></script>
-    <script src="{{url_for('static', filename='javascript/customer_signup.js')}}"></script>
+    <script src="{{url_for('static', filename='javascript/customer_signup.js')}}"></script>#}
+    <script src="{{url_for('static', filename='javascript/commonfuncs.js')}}"></script>
 </body>
 </html>

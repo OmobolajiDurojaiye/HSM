@@ -1,0 +1,32 @@
+{%extends "index.html"%}
+
+{% block content %}
+    <div class="contact-container">
+        <div class="contact-container-head">
+            <h1>
+                Have Questions? Contact Us
+            </h1>
+            <p>
+                Don't hesitate to contact us with any inquiries or feedback. 
+                We're committed to providing excellent customer service and are eager to assist you.
+            </p>
+        </div>
+
+        <div class="contact-container-body">
+            <div class="contact-form">
+                <form id="contact-form" action="/index" method="post">
+                    
+                    
+                    <input type="text" name="name" id="name" placeholder="Your Name" autocomplete=true required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" autocomplete=true required>
+                    <textarea name="message" id="message" placeholder="Your Message" autocomplete=true required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+
+            <div class="contact-image">
+                <img src="{{url_for('static', filename='images/welcome-image (2).png')}}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock content %}

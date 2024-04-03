@@ -22,15 +22,15 @@ $(document).ready(function() {
                         
                         <div class="contact-container-body">
                             <div class="contact-form">
-                              <form style="padding: 5%;" id="contact-form" action="/login" method="post">
+                                <form style="padding: 5%;" id="contact-form" action="/login" method="post">
                                     <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
                                     
                                     <input type="text" name="username" id="username" placeholder="Your Name" autocomplete=true required>
                                     <input type="email" name="email" id="email" placeholder="Your Email" autocomplete=true required>
                                     <input type="password" name="password" id="password" placeholder="*****" required>
-                                    <input type="radio" name="is_service_provider" class="m-3" value="true" id="service_provider" checked> <span id="agree">I agree to terms of being a service provider</span>
+                                    <input type="radio" name="is_service_provider" class="m-3" value="service provider" id="service_provider" checked> <span id="agree">I agree to terms of being a service provider</span>
                                     <input type="submit" value="Sign Up">
-                                </form> 
+                                </form>
                             </div>
 
                             <div class="contact-image">

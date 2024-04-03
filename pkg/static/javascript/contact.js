@@ -48,7 +48,6 @@ $(document).ready(function() {
     $(document).on('submit', '#contact-form', function(e) {
         e.preventDefault();
     
-        // Retrieve CSRF token from the meta tag
         var csrfToken = $('meta[name=csrf-token]').attr('content');
     
         $.ajax({
