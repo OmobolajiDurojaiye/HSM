@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+    list-style-type: none;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #EED2BA, rgb(73, 73, 73));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 97%;
+    height: 97vh;
+    background-color:#222;
+    border-radius: 20px;
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #EED2BA transparent;
+}
+
+.main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main::-webkit-scrollbar-thumb { 
+    background-color: #EED2BA;
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.active {
+    color: #EED2BA !important;
+    border-bottom: 3px solid #EED2BA;
+}
+
+.head {
+    width: 100%;
+    /* border: 1px solid red; */
+    height: max-content !important;
+    border-bottom: 2px solid #EED2BA !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2% 0;
+}
+
+.content-nav {
+    width: max-content;
+    /* border: 1px solid green; */
+    justify-content: center;
+    align-items: center;
+}
+
+.content-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-nav ul li {
+    margin: 0 10px;
+}
+
+.content-nav ul li a {
+    color: #fff !important;
+    transition: .3s;
+}
+
+.content-nav ul li a:hover {
+    border-bottom: 3px solid #EED2BA;
+}
+
+.content-nav ul li a img {
+    height: 20px;
+    width: 20px;
+}
+
+.main-content {
+    height: max-content;
+}
+
+/*
+    DASHBOARD STYLE
+*/
+.basic-info {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    /* border: 1px solid red; */
+    padding: 2%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-info-header {
+    height: max-content;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.basic-info .profile-info {
+    height: max-content;
+    width: 35%;
+    border: 2px solid #131313;
+    border-radius: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: #EED2BA;
+    padding: 10px 5px;
+}
+
+.basic-info .other-info {
+    height: 70vh;
+    width: 50%;
+    border: 1px solid white;
+}
+
+.name_basic_info {
+    height: max-content;
+    padding: 10px;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.name_basic_info p {
+    color: black;
+}
+
+.name_basic_info span {
+    color: rebeccapurple;
+    font-weight: bolder;
+}
+
+.profile-info-services {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    /* border: 2px solid green; */
+}
+
+.services {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
+    /* border: 2px solid green; */
+}
+
+.profile-info-services span {
+    background-color: rebeccapurple;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: .8em;
+}
+
+.rating {
+    height: 20vh;
+    padding: 10px;
+    /* border: 1px solid gold; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-content {
+    height: max-content;
+    width: max-content;
+    /* border: 1px solid red; */
+    padding: 10px;
+    background-color: #EED2BA;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.rating-content p {
+    color: green;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.edit {
+    height: max-content;
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.edit a {
+    background: #131313;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.edit a:hover {
+    color: #fff;
+}

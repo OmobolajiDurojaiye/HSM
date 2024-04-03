@@ -244,11 +244,36 @@ def customer_login():
 def service_provider_dashboard():
     if 'user_id' in session:
         user_id = session['user_id']
-        return render_template('service_provider/landing_page.html', user_id=user_id)
+        user = User.query.filter_by(id=user_id).first()
+        if user:
+            return render_template('service_provider/landing_page.html', user=user)
+        else:
+            flash('User not found.')
+            return redirect(url_for('service_provider_login'))
     else:
         flash('You need to login first.')
         return redirect(url_for('service_provider_login'))
     
+
+@app.route('/service_provider/profile/')
+def service_provider_profile():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        user = User.query.filter_by(id=user_id).first()
+        if user:
+            return render_template('service_provider/profile.html', user=user)
+        else:
+            flash('User not found.')
+            return redirect(url_for('service_provider_login'))
+    else:
+        flash('You need to login first.')
+        return redirect(url_for('service_provider_login'))
+    
+
+
+
+
+
 
 @app.route('/customer/dashboard/')
 def customer_dashboard():
@@ -258,3 +283,16 @@ def customer_dashboard():
     else:
         flash('You need to login first.')
         return redirect(url_for('customer_login'))
+    
+
+@app.route('/customer/logout/')
+def customer_logout():
+    session.pop('user_id', None)
+    flash('You have been logged out successfully.')
+    return redirect(url_for('customer_login'))
+
+@app.route('/service_provider/logout/')
+def service_provider_logout():
+    session.pop('user_id', None)
+    flash('You have been logged out successfully.')
+    return redirect(url_for('service_provider_login'))

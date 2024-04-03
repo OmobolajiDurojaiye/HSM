@@ -1,1 +1,78 @@
-Service Provider!!!
+{% extends "service_provider/base.html" %}
+{% block dash_active %} active {% endblock %}
+
+{% block content %}
+    
+    <div class="basic-info">
+        <div class="profile-info">
+            <div class="profile-info-header">
+                <h2>
+                    YOUR INFO
+                </h2>
+            </div>
+
+            <div class="name_basic_info">
+                <p>
+                   Name: <span>{{user.username | title}}</span>
+                </p>
+
+                <p>
+                    Email: <span>{{user.email}}</span> 
+                </p>
+
+                <p>
+                    Role: <span>{{user.role | title}}</span>
+                </p>
+            </div>
+
+            <div class="profile-info-services">
+                <div class="services-head">
+                    <h4>
+                        You Offer,
+                        <p style="color: rebeccapurple;">Cleaning & Maintainance</p>
+                    </h4>
+                </div>
+                <div class="services">
+                    <span>
+                        cleaning
+                    </span>
+                    <span>
+                        washing
+                    </span>
+                    <span>
+                        dishes
+                    </span>
+                    <span>
+                        laundry
+                    </span>
+                </div>
+            </div>
+
+            <div class="rating">
+                <div class="rating-content">
+                    <h3>
+                        Average Rating
+                    </h3>
+
+                    <p>
+                        95%
+                    </p>
+                </div>
+            </div>
+
+            <div class="edit">
+                <a href="/service_provider/profile/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"/>
+                    </svg>
+                    Edit
+                </a>
+            </div>
+        </div>
+
+        <div class="other-info">
+
+        </div>
+    </div>
+
+{% endblock content %}
